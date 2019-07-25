@@ -5,7 +5,7 @@
         v-model="textInput"
         class="form-control"
         v-on:keyup.enter="create"
-        placeholder="Hi, I'm a vue element!"
+        placeholder="Enter your todo item and press enter"
       />
     </div>
   </div>
@@ -24,11 +24,9 @@ export default {
   methods: {
     create() {
       axios.post("/todo", {
-        id: this.id,
         title: this.textInput.slice(),
         completed: false
       }).then(() => {
-        this.id += 1
         this.$emit('created')
         this.textInput = ""
       })
