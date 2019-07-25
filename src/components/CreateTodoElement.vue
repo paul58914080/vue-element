@@ -17,7 +17,6 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      id: 1,
       textInput: ""
     }
   },
